@@ -1,0 +1,42 @@
+<template>
+
+    <div>
+        Welcome to LWC Lifecycle Hooks
+    </div>
+   
+   
+   
+   
+   
+    
+    <!--<div>
+        <input type="text" onkeyup={changeHandler}/> {name}           
+    </div>-->
+
+    <!--<c-life-cycle-error-callback></c-life-cycle-error-callback> -->
+
+    
+    <template if:true={displayChild}>
+        <lightning-button
+        variant="brand"
+        label="Remove Child" 
+        title="Remove Child" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small"></lightning-button>
+    </template>
+    <template if:false={displayChild}>
+        <lightning-button
+        variant="brand"
+        label="Show Child" 
+        title="Show Child" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small"></lightning-button>
+    </template>
+    <template if:true={displayChild}>
+        <c-life-cycle-disconnected-callback></c-life-cycle-disconnected-callback>
+    </template>
+    
+    
+
+    
+</template>

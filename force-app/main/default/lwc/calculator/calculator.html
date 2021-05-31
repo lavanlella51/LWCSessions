@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Calculator" icon-name="standard:formula">
+        <div class="slds-p-around_small">
+            <lightning-input type="number" name="firstNumber" onchange={numberChangeHandler}></lightning-input>
+            <lightning-input type="number" name="secondNumber"  onchange={numberChangeHandler}></lightning-input>
+        </div>
+
+        <template if:true={currentResult}>
+            <div class="slds-box slds-m-around_small">
+                Result: {currentResult}
+            </div>
+        </template>
+
+        <lightning-button-group class="slds-p-around_small">
+            <lightning-button label="Add" icon-name="utility:add" icon-position="right" onclick={addHandler}></lightning-button>
+            <lightning-button label="Subtract" icon-name="utility:dash" icon-position="right" onclick={subHandler}></lightning-button>
+            <lightning-button label="Multiply" icon-name="utility:close" icon-position="right" onclick={multiplyHandler}></lightning-button>
+            <lightning-button label="Divide" icon-name="utility:magicwand" icon-position="right"  onclick={divisionHandler}></lightning-button>
+        </lightning-button-group>
+        
+        
+    </lightning-card>
+</template>

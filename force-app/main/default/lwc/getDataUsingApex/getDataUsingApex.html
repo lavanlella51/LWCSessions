@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Accounts Quick Edit">
+        <div class="slds-grid">
+            <div class="slds-size_3-of-12 slds-p-around_medium" >
+                <template for:each={accounts} for:item="acc">
+                    <div key={acc.Id} class="slds-p-around_medium lgc-bg">
+                        <lightning-tile type="media" data-id={acc.Id} onclick={setSelectedAccount}>
+                            <lightning-icon slot="media" icon-name="standard:account"></lightning-icon>
+                            <p class="slds-truncate title" >
+                                {acc.Name}
+                            </p>
+                            <p class="slds-truncate">
+                                <lightning-formatted-number value={acc.AnnualRevenue} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                            </p>
+                        </lightning-tile>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-size_9-of-12 slds-p-around_medium" if:true={selectedAccountId}>
+                <lightning-record-form
+                    record-id={selectedAccountId}
+                    object-api-name="Account"
+                    columns="2"
+                    mode="view"
+                    layout-type="Compact">
+                </lightning-record-form>
+            </div>
+        </div>
+    </lightning-card>
+</template>

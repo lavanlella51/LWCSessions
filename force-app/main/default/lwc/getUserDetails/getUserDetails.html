@@ -1,0 +1,13 @@
+<template>
+
+    <lightning-card title="User Details" icon-name="standard:user">
+        <template if:true={userData.data}>
+            <div class="slds-m-around_medium">
+                <p>{name}</p>
+                <p>{username}</p>
+                <p><lightning-formatted-email value={email}></lightning-formatted-email></p>
+            </div>
+        </template>
+    </lightning-card>
+    
+</template>

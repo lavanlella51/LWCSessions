@@ -1,0 +1,32 @@
+<template>
+
+    <lightning-card>
+        <div class="slds-p-around_small">
+           
+           
+            <template for:each={cityList} for:item="city">
+                <p key={city}>
+                    {city}
+                </p>
+            </template>
+
+
+
+
+            <template iterator:it={cityList}>
+                <p key={it.value}>
+                    <template if:true={it.first}>
+                        <div class="slds-m-top_medium slds-m-bottom_xx-small">
+                            <strong>
+                                List of Cities
+                            </strong>
+                        </div>
+                    </template>
+                    {it.value}
+                </p>
+            </template>
+
+
+        </div>
+    </lightning-card>
+</template>

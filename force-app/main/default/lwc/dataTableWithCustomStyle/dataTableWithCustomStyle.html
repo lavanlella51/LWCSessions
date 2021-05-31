@@ -1,0 +1,12 @@
+<template>
+    <div class="slds-text-align_right myUniqueTable">
+        <lightning-datatable
+            key-field="id"
+            data={data}
+            columns={columns}
+            is-loading={tableLoadingState}
+            hide-checkbox-column
+            onrowaction={callRowAction}>
+        </lightning-datatable>
+    </div>
+</template>

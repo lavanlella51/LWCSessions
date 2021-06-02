@@ -1,4 +1,4 @@
-public with sharing class OwnerDetailsComponent {
+public with sharing class OwnerDetailsController {
     
     @AuraEnabled
     public static List<User> getUsers(String recordId, String objectName){        

@@ -1,0 +1,13 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_small">
+            <p if:true={isExpired} class="slds-align_absolute-center slds-text-heading_small slds-text-color_error">
+                Expired
+            </p>
+            <p if:false={isExpired} class="slds-align_absolute-center slds-text-heading_small slds-text-color_success">
+                {label} {days_difference} Days
+            </p>
+        </div>
+    </lightning-card>
+    
+</template>

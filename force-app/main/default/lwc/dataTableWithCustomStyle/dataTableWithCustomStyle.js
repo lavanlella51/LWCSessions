@@ -33,7 +33,7 @@ const columns = [{
         }
     },
     {
-        label: 'Name of the person',
+        label: 'Name',
         fieldName: 'name',
         type: 'text',
         cellAttributes: {
@@ -53,7 +53,7 @@ const columns = [{
         }
     },
     {
-        label: 'Blood group of the person',
+        label: 'Blood Group',
         fieldName: 'bloodGroup',
         type: 'text',
         cellAttributes: {
@@ -75,7 +75,7 @@ const columns = [{
         }
     },
     {
-        label: 'Date of Birth',
+        label: 'Due Date',
         fieldName: 'dob',
         type: "date-local",
         typeAttributes: {
@@ -130,7 +130,7 @@ export default class DataTableWithCustomStyle extends NavigationMixin(LightningE
             dob: new Date(),
             employees: '1000',
             employeeClass: 'slds-badge slds-theme_success slds-m-top_xxx-small slds-m-right_xxx-small',
-            website: 'virtual.lightning.force.com'
+            website: 'www.ceptes.com'
         }, {
             name: 'Kelly',
             active: '',
@@ -142,7 +142,7 @@ export default class DataTableWithCustomStyle extends NavigationMixin(LightningE
             dob: new Date().getTime() + (5 * 24 * 60 * 60 * 1000),
             employees: '50',
             employeeClass: 'slds-badge slds-theme_error slds-m-top_xxx-small slds-m-right_xxx-small',
-            website: 'virtual.lightning.force.com'
+            website: 'www.ceptes.com'
         }, {
             name: 'Jeff',
             active: '',
@@ -154,9 +154,9 @@ export default class DataTableWithCustomStyle extends NavigationMixin(LightningE
             dob: new Date().getTime() + (10 * 24 * 60 * 60 * 1000),
             employees: '300',
             employeeClass: 'slds-badge slds-theme_warning slds-m-top_xxx-small slds-m-right_xxx-small',
-            website: 'virtual.lightning.force.com'
+            website: 'www.ceptes.com'
         }, {
-            name: 'Plarent',
+            name: 'Thomas',
             active: '',
             activeIcon: 'action:reject',
             bloodGroup: 'AB+',
@@ -166,36 +166,36 @@ export default class DataTableWithCustomStyle extends NavigationMixin(LightningE
             dob: new Date().getTime() + (30 * 24 * 60 * 60 * 1000),
             employees: '14000',
             employeeClass: 'slds-badge slds-theme_success slds-m-top_xxx-small slds-m-right_xxx-small',
-            website: 'virtual.lightning.force.com'
+            website: 'www.ceptes.com'
         });
         this.data = data;
     }
 
     callRowAction(event) {
-        const recId = event.detail.row.name;
+        const name = event.detail.row.name;
         const actionName = event.detail.action.name;
-        console.log('---recId----' + recId);
+        console.log('---name----' + name);
         console.log('---actionName----' + actionName);
         if (actionName === 'View') {
             this[NavigationMixin.Navigate]({
                 type: 'standard__navItemPage',
                 attributes: {
-                    apiName: 'Product_Summary'
+                    apiName: 'LWC'
 
                 },
                 state: {
-                    c__id: recId
+                    c__name: name
                 }
             });
         } else if (actionName === 'Preview') {
             this[NavigationMixin.GenerateUrl]({
                 type: 'standard__navItemPage',
                 attributes: {
-                    apiName: 'Product_Summary'
+                    apiName: 'LWC'
 
                 },
                 state: {
-                    c__id: recId
+                    c__name: name
                 }
             }).then(url => {
                 window.open(url);

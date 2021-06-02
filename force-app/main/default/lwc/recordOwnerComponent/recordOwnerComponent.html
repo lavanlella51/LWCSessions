@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Owner">   
+        <div class="slds-size_12-of-12 slds-wrap slds-p-around_small">
+            <template for:each={data} for:item="user">
+                <lightning-pill key={user.Id} label={user.Name} href="" name={user.Id}>
+                    <lightning-icon icon-name="standard:user" variant="circle"></lightning-icon>
+                </lightning-pill> 
+            </template>                   
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card>
+        <lightning-record-view-form record-id={recordId} object-api-name={objectApiName}>
+            <template for:each={data} for:item="fieldset">
+                <div key={fieldset.name} class="slds-box slds-m-around_small">
+                    <lightning-card title={fieldset.label} icon-name="standard:knowledge">
+                        <div class="slds-grid slds-wrap slds-p-around_medium">
+                            <template for:each={fieldset.fieldAPIList} for:item="fieldAPI">
+                                <div key={fieldAPI} class="slds-col slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--1-of-2 slds-large-size--1-of-2">
+                                    <lightning-output-field field-name={fieldAPI}></lightning-output-field>                            
+                                </div>
+                            </template> 
+                        </div>
+                    </lightning-card>   
+                </div>        
+            </template>
+        </lightning-record-view-form>
+    </lightning-card>
+</template>

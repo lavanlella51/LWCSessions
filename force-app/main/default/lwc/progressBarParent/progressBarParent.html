@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Child to Parent Communication">
+        <div class="slds-p-around_small">
+            <div class="slds-p-bottom_small">
+                <lightning-progress-bar value={progressValue} size="large"></lightning-progress-bar>
+            </div>
+            <c-progress-bar-child onprogressvaluechange={hanldeProgressValueChange}>                
+            </c-progress-bar-child>            
+        </div>
+    </lightning-card>
+</template>

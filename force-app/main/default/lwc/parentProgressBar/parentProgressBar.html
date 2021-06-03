@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Parent to Child Communication">
+        <div class="slds-p-around_small">
+            <div class="slds-p-bottom_small">
+                <lightning-input type="number" name="progress" label="Enter a number" onchange={handleNumberChange}>        
+                </lightning-input>                
+            </div>
+
+            <c-child-progress-bar progress-value={progressValue}></c-child-progress-bar>
+        </div>
+    </lightning-card>
+</template>

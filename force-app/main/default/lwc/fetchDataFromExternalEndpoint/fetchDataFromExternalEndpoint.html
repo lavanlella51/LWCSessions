@@ -1,0 +1,50 @@
+<template>
+    <div class="slds-p-bottom_small">
+        <lightning-card>
+            <div class="slds-box slds-m-around_medium">
+                <div if:true={data} class="slds-grid slds-align_absolute-center slds-text-heading_large">
+                    IP Address: {data}
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+    <div class="slds-p-bottom_small">
+        <lightning-card title="Do you feel bored?">
+            <div class="slds-box slds-m-around_medium">
+                <div class="slds-m-around_medium">
+                    <div class="slds-align_absolute-center">
+                        <lightning-button variant="base" label="Click Me" onclick={getActivity}></lightning-button>   
+                    </div>
+                </div>
+                <div class="slds-p-around_small slds-text-font_monospace slds-align_absolute-center slds-text-heading_small">
+                    {activityData}    
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+    <div class="slds-p-bottom_small">
+        <lightning-card title="Are you interested in comics?">
+            <div class="slds-box slds-m-around_medium">
+                <div class="slds-m-around_medium">
+                    <div class="slds-align_absolute-center">
+                        <lightning-button variant="base" label="Click Me" onclick={fetchComics}></lightning-button>   
+                    </div>
+                </div>
+                <template if:true={comicData}>
+                    <div class="slds-p-around_small slds-text-font_monospace slds-align_absolute-center">
+                        <div>
+                            <img src={comicData.img}> 
+                        </div>                     
+                    </div>
+                    <div class="slds-align_absolute-center slds-m-bottom_x-large slds-text-font_monospace">
+                            {comicData.title}    
+                    </div>
+                    <div class="slds-align_absolute-center slds-text-font_monospace">
+                        <lightning-formatted-rich-text value={comicData.transcript}>
+                        </lightning-formatted-rich-text>                    
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </div>
+</template>

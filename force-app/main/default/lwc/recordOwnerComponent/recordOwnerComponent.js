@@ -1,6 +1,7 @@
 import { LightningElement, api } from 'lwc';
 import getUsers from '@salesforce/apex/OwnerDetailsController.getUsers';
 
+
 export default class RecordOwnerComponent extends LightningElement {
 
     @api recordId;
